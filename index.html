@@ -322,47 +322,20 @@
   .stat-label { font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(243,224,209,.5); margin-top: .3rem; }
 
   /* ── IDENTITY / LOGOS ── */
-  .identity {
-    padding: 8rem 8vw;
-    background: var(--oat);
-  }
-  .identity-header {
-    text-align: center; margin-bottom: 5rem;
-    display: flex; flex-direction: column; align-items: center; gap: 1rem;
-  }
-  .logo-showcase {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3px;
-  }
-  .logo-panel {
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    padding: 4rem 3rem;
-    gap: 1.5rem;
-    position: relative;
-  }
-  .logo-panel.dark { background: var(--wine); }
-  .logo-panel.light { background: var(--light); }
-  .logo-panel.mid { background: var(--orchid); }
-  .logo-panel.nude-bg { background: var(--nude); }
-  .logo-panel svg { max-width: 200px; height: auto; }
-  .logo-panel.dark svg { fill: var(--oat); }
-  .logo-panel.dark svg .cls-1 { stroke: var(--oat); }
-  .logo-panel.light svg { fill: var(--wine); }
-  .logo-panel.light svg .cls-1 { stroke: var(--wine); }
-  .logo-panel.mid svg { fill: var(--light); }
-  .logo-panel.mid svg .cls-1 { stroke: var(--light); }
-  .logo-panel.nude-bg svg { fill: var(--wine); }
-  .logo-panel.nude-bg svg .cls-1 { stroke: var(--wine); }
-  .logo-usage {
-    font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-    opacity: .5;
-  }
-  .logo-panel.dark .logo-usage { color: var(--oat); }
-  .logo-panel.light .logo-usage { color: var(--wine); }
-  .logo-panel.mid .logo-usage { color: var(--light); }
-  .logo-panel.nude-bg .logo-usage { color: var(--wine); }
+ .logo-showcase .logo-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem; /* Adjust padding to give the logos "breathing room" */
+}
+
+.showcase-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem; /* Space between logo and usage text */
+}
 
   /* ── TYPOGRAPHY ── */
   .typography-section {
