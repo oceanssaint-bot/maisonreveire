@@ -322,19 +322,44 @@
   .stat-label { font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(243,224,209,.5); margin-top: .3rem; }
 
   /* ── IDENTITY / LOGOS ── */
- .logo-showcase .logo-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem; /* Adjust padding to give the logos "breathing room" */
+/* Container Setup */
+.logo-grid {
+  display: grid;
+  /* Desktop & Tablet: 2 columns of equal width */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; /* Adjust spacing between panels */
+  width: 100%;
+  max-width: 1200px; /* Optional: keeps it from getting too wide on ultra-wide screens */
+  margin: 0 auto;
 }
 
-.showcase-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 1.5rem; /* Space between logo and usage text */
+/* Individual Panel Styling */
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1; /* Makes them perfect squares, or remove for natural height */
+  padding: 40px;
+  overflow: hidden;
+}
+
+.logo-item img {
+  width: 100%;
+  height: auto;
+  max-width: 80%; /* Adjust this to control how "big" the logo looks inside the box */
+  object-fit: contain;
+}
+
+/* Mobile: Stack them (1 column) */
+@media (max-width: 600px) {
+  .logo-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .logo-item {
+    aspect-ratio: auto; /* Let panels shrink vertically on mobile */
+    padding: 60px 20px;
+  }
 }
 
   /* ── TYPOGRAPHY ── */
@@ -756,37 +781,12 @@
 </section>
 
 <!-- BRAND IDENTITY / LOGOS -->
-<section class="identity" id="identity">
-  <div class="identity-header">
-    <p class="section-label reveal">Brand Identity</p>
-    <h2 class="section-heading reveal reveal-delay-1">Logo <em>Variations</em></h2>
-    <p class="section-body reveal reveal-delay-2" style="text-align:center">Four logo expressions for every context — from packaging to digital, from hang tags to campaigns.</p>
-  </div>
-  
-  <div class="logo-showcase">
-
-    <div class="logo-panel dark reveal">
-      <img src="images/p1.svg" alt="Full Logo Light on Dark" class="showcase-img">
-      <span class="logo-usage">Full Logo · Light on Dark</span>
-    </div>
-
-    <div class="logo-panel light reveal reveal-delay-1">
-      <img src="images/p2.svg" alt="Mark Only Dark on Light" class="showcase-img" style="max-width:160px">
-      <span class="logo-usage">Mark Only · Dark on Light</span>
-    </div>
-
-    <div class="logo-panel mid reveal reveal-delay-2">
-      <img src="images/p3.svg" alt="Rounded Badge Light on Orchid" class="showcase-img" style="max-width:120px">
-      <span class="logo-usage">Rounded Badge · Light on Orchid</span>
-    </div>
-
-    <div class="logo-panel nude-bg reveal reveal-delay-3">
-      <img src="images/p4.svg" alt="Wordmark Wine on Nude" class="showcase-img" style="max-width:280px">
-      <span class="logo-usage">Wordmark · Wine on Nude</span>
-    </div>
-
-  </div>
-</section>
+<div class="logo-grid">
+  <div class="logo-item dark"><img src="images/p1.svg" alt="Logo 1"></div>
+  <div class="logo-item light"><img src="images/p2.svg" alt="Logo 2"></div>
+  <div class="logo-item mid"><img src="images/p3.svg" alt="Logo 3"></div>
+  <div class="logo-item nude-bg"><img src="images/p4.svg" alt="Logo 4"></div>
+</div>
 
 <!-- TYPOGRAPHY -->
 <section class="typography-section">
