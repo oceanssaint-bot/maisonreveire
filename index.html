@@ -322,43 +322,43 @@
   .stat-label { font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(243,224,209,.5); margin-top: .3rem; }
 
   /* ── IDENTITY / LOGOS ── */
-/* Container Setup */
 .logo-grid {
   display: grid;
-  /* Desktop & Tablet: 2 columns of equal width */
+  /* 2 columns on desktop/tablet */
   grid-template-columns: repeat(2, 1fr); 
-  gap: 20px; /* Adjust spacing between panels */
-  width: 100%;
-  max-width: 1200px; /* Optional: keeps it from getting too wide on ultra-wide screens */
+  /* Reduce gap between panels */
+  gap: 15px; 
+  width: 90%;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Individual Panel Styling */
 .logo-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1 / 1; /* Makes them perfect squares, or remove for natural height */
-  padding: 40px;
-  overflow: hidden;
+  /* REMOVE aspect-ratio or fixed height */
+  padding: 60px 40px; /* Adjust first number (60px) to control white space above/below logo */
+  height: auto; 
 }
 
 .logo-item img {
   width: 100%;
   height: auto;
-  max-width: 80%; /* Adjust this to control how "big" the logo looks inside the box */
-  object-fit: contain;
+  /* This controls the size of the logo relative to the colored box */
+  max-width: 250px; 
+  display: block;
 }
 
-/* Mobile: Stack them (1 column) */
-@media (max-width: 600px) {
+/* Mobile: Stacked */
+@media (max-width: 768px) {
   .logo-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
   
   .logo-item {
-    aspect-ratio: auto; /* Let panels shrink vertically on mobile */
-    padding: 60px 20px;
+    padding: 40px 20px;
   }
 }
 
