@@ -37,7 +37,6 @@
     border-bottom: 1px solid rgba(116,28,40,0.08);
   }
   .nav-logo {
-    /* Adjust this width to match your header design */
     width: 100%; 
     max-width: 300px; 
     display: flex;
@@ -46,7 +45,7 @@
 
 .logo-img {
     width: 100%;
-    height: auto; /* Maintains the original aspect ratio */
+    height: auto; 
     display: block;
     object-fit: contain;
 }
@@ -284,7 +283,7 @@
     padding: .35rem .75rem;
   }
 
-  /* ── MOCKUP FEATURE ── */
+  /* ── FEATURE MOCKUP ── */
   .feature-mockup {
     display: grid; grid-template-columns: 1.3fr 1fr;
     min-height: 85vh;
@@ -321,46 +320,55 @@
   }
   .stat-label { font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(243,224,209,.5); margin-top: .3rem; }
 
-  /* ── IDENTITY / LOGOS ── */
-.logo-grid {
-  display: grid;
-  /* 2 columns on desktop/tablet */
-  grid-template-columns: repeat(2, 1fr); 
-  /* Reduce gap between panels */
-  gap: 15px; 
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+  /* ── BRAND IDENTITY / LOGOS (UPDATED) ── */
+  #identity {
+    padding: 6rem 0;
+    background: var(--light);
+  }
 
-.logo-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* REMOVE aspect-ratio or fixed height */
-  padding: 60px 40px; /* Adjust first number (60px) to control white space above/below logo */
-  height: auto; 
-}
-
-.logo-item img {
-  width: 100%;
-  height: auto;
-  /* This controls the size of the logo relative to the colored box */
-  max-width: 250px; 
-  display: block;
-}
-
-/* Mobile: Stacked */
-@media (max-width: 768px) {
   .logo-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px; /* This creates the thin divider line */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff; /* Divider color */
+    border: 1px solid #fff;
   }
-  
+
   .logo-item {
-    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    padding: 60px;
+    transition: opacity 0.3s ease;
   }
-}
+
+  .logo-item img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Specific Background Colors */
+  .logo-item.dark { background: var(--wine); }
+  .logo-item.light { background: #FCF9F7; }
+  .logo-item.mid { background: var(--orchid); }
+  .logo-item.nude-bg { background: var(--nude); }
+
+  @media (max-width: 768px) {
+    .logo-grid {
+      grid-template-columns: 1fr;
+    }
+    .logo-item {
+      padding: 40px;
+      aspect-ratio: 3 / 2;
+    }
+  }
 
   /* ── TYPOGRAPHY ── */
   .typography-section {
@@ -536,8 +544,6 @@
     .collections { padding: 4rem 2rem; }
     .collections-grid { grid-template-columns: 1fr 1fr; }
     .collections-grid-bottom { grid-template-columns: 1fr; }
-    .identity { padding: 4rem 2rem; }
-    .logo-showcase { grid-template-columns: 1fr 1fr; }
     .typography-section { padding: 4rem 2rem; gap: 3rem; }
     .vision { padding: 5rem 2rem; gap: 3rem; }
     .contact-section { padding: 5rem 2rem; gap: 3rem; }
@@ -548,7 +554,6 @@
   }
   @media (max-width: 600px) {
     .story-pillars { grid-template-columns: 1fr; }
-    .logo-showcase { grid-template-columns: 1fr; }
     .feature-stats { grid-template-columns: 1fr; }
     .collections-grid { grid-template-columns: 1fr; }
     .swatch { height: 80px; }
@@ -562,7 +567,6 @@
 <nav>
   <div class="nav-logo">
     <img src="images/logo.png" alt="Company Logo" class="logo-img">
-</div>
   </div>
   <ul>
     <li><a href="#story">Story</a></li>
@@ -780,13 +784,15 @@
   </div>
 </section>
 
-<!-- BRAND IDENTITY / LOGOS -->
-<div class="logo-grid">
-  <div class="logo-item dark"><img src="images/p1.svg" alt="Logo 1"></div>
-  <div class="logo-item light"><img src="images/p2.svg" alt="Logo 2"></div>
-  <div class="logo-item mid"><img src="images/p3.svg" alt="Logo 3"></div>
-  <div class="logo-item nude-bg"><img src="images/p4.svg" alt="Logo 4"></div>
-</div>
+<!-- BRAND IDENTITY / LOGOS (UPDATED GRID) -->
+<section id="identity">
+  <div class="logo-grid reveal">
+    <div class="logo-item dark"><img src="images/p1.svg" alt="Logo 1"></div>
+    <div class="logo-item light"><img src="images/p2.svg" alt="Logo 2"></div>
+    <div class="logo-item mid"><img src="images/p3.svg" alt="Logo 3"></div>
+    <div class="logo-item nude-bg"><img src="images/p4.svg" alt="Logo 4"></div>
+  </div>
+</section>
 
 <!-- TYPOGRAPHY -->
 <section class="typography-section">
